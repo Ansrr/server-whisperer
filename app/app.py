@@ -20,6 +20,7 @@ from explain import ACTIONS, KIND_TEXT, METRIC_TEXT, contributions, load_model  
 from features import add_features  # noqa: E402
 from simulator import simulate_server  # noqa: E402
 from train import baseline_alert, to_alerts  # noqa: E402
+from sonify import sonify  # noqa: E402
 
 st.set_page_config(page_title="The Server Whisperer", page_icon="🌫️", layout="wide")
 VIEW_MINUTES = 900
@@ -161,6 +162,11 @@ elif "scenario" in st.session_state:
     draw(sc, pos, chart_ph, status_ph)
     if pos == n - 1:
         show_summary(sc)
+    with st.expander("Listen to this failure"):
+        st.caption("Calm hum = healthy. Clashing notes = drifting. Beeping = failure predicted.")
+        if "wav" not in sc:
+            sc["wav"] = sonify(sc["df"], config["if_threshold"], VIEW_MINUTES)
+        st.audio(sc["wav"], format="audio/wav")
 else:
     chart_ph.info("Pick a fault in the sidebar and press **Break a server**.")
 
