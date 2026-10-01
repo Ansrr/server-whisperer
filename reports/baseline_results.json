@@ -1,7 +1,7 @@
 {
-  "failures_total": 12,
-  "failures_caught": 12,
-  "median_lead_minutes": 59.0,
-  "false_alarms": 35,
-  "false_alarms_per_server_day": 0.16
+  "failures_total": 24,
+  "failures_caught": 24,
+  "median_lead_minutes": 79.0,
+  "false_alarms": 92,
+  "false_alarms_per_server_day": 0.24
 }

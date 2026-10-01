@@ -74,7 +74,7 @@ def simulate_server(server_id, days=10, fault=None, seed=0):
 
 
 def build_fleet(days=10):
-    plan = ["none"] * 12 + ["memory_leak"] * 4 + ["disk_fill"] * 4 + ["cpu_spike"] * 4
+    plan = ["none"] * 20 + ["memory_leak"] * 8 + ["disk_fill"] * 8 + ["cpu_spike"] * 8
     frames = [
         simulate_server(f"srv-{i + 1:02d}", days, None if p == "none" else p, seed=i)
         for i, p in enumerate(plan)
@@ -89,3 +89,4 @@ if __name__ == "__main__":
     fleet.to_csv(out / "fleet_metrics.csv", index=False)
     print(f"Saved {len(fleet):,} rows for {fleet.server_id.nunique()} servers")
     print(fleet.groupby("fault_type").server_id.nunique())
+
