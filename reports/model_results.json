@@ -1,0 +1,41 @@
+{
+  "results": {
+    "Threshold baseline": {
+      "caught": "6/6",
+      "median_lead_min": 57.0,
+      "false_alarms_per_server_day": 0.318,
+      "lead_cpu_spike": 6.0,
+      "lead_disk_fill": 129.0,
+      "lead_memory_leak": 57.0
+    },
+    "Isolation Forest": {
+      "caught": "6/6",
+      "median_lead_min": 245.0,
+      "false_alarms_per_server_day": 0.286,
+      "lead_cpu_spike": 44.0,
+      "lead_disk_fill": 533.0,
+      "lead_memory_leak": 245.0
+    },
+    "XGBoost": {
+      "caught": "6/6",
+      "median_lead_min": 88.0,
+      "false_alarms_per_server_day": 0.021,
+      "lead_cpu_spike": 32.5,
+      "lead_disk_fill": 117.5,
+      "lead_memory_leak": 88.5
+    }
+  },
+  "test_servers": [
+    "srv-40",
+    "srv-41",
+    "srv-29",
+    "srv-31",
+    "srv-26",
+    "srv-28",
+    "srv-19",
+    "srv-09",
+    "srv-10",
+    "srv-08",
+    "srv-05"
+  ]
+}
