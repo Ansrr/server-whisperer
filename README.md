@@ -1,4 +1,4 @@
-﻿# The Server Whisperer
+# The Server Whisperer
 
 **Every failure whispers first.**
 
@@ -12,18 +12,18 @@ A machine learning system that learns what a healthy server looks like and warns
 - **Sonification:** a calm hum turns discordant, then beeps, as a server drifts toward failure.
 
 ## Results
-Evaluated on held-out simulated servers that no model was trained or tuned on. Each model's alert threshold was chosen on separate validation servers to stay within the threshold rule's false-alarm budget.
+Evaluated on held-out simulated servers that no model was trained or tuned on. To check that the result is not a lucky split, the whole comparison was repeated on 5 different random splits of the servers (average +/- spread across splits). Each model's alert threshold was chosen on separate validation servers to stay within the threshold rule's false-alarm budget.
 
 | | Threshold rule (>90%) | Isolation Forest | XGBoost |
 |---|---|---|---|
-| Failures caught | 6/6 | 6/6 | 6/6 |
-| Median warning (minutes) | 57 | 245 | 88 |
-| False alarms per server-day | 0.318 | 0.286 | 0.021 |
-| CPU spike warning (min) | 6 | 44 | 32.5 |
-| Disk fill warning (min) | 129 | 533 | 117.5 |
-| Memory leak warning (min) | 57 | 245 | 88.5 |
+| Failures caught | 30/30 | 30/30 | 30/30 |
+| Median warning (minutes) | 59 +/- 16 | 221 +/- 22 | 120 +/- 36 |
+| False alarms per server-day | 0.26 +/- 0.03 | 0.12 +/- 0.08 | 0.08 +/- 0.09 |
+| CPU spike warning (min) | 5 +/- 0.4 | 38 +/- 1.4 | 43 +/- 6.5 |
+| Disk fill warning (min) | 129 +/- 1.6 | 508 +/- 82 | 341 +/- 165 |
+| Memory leak warning (min) | 59 +/- 16 | 221 +/- 22 | 132 +/- 33 |
 
-XGBoost cut false alarms by about 93% and warned earlier for CPU spikes and memory leaks. It did not beat the threshold rule on disk fills (117.5 vs 129 minutes).
+On average XGBoost produced about 70% fewer false alarms than the threshold rule and gave roughly twice as much warning, with the biggest gain on CPU spikes (about 43 minutes against 5). All three methods caught every failure, so the difference is in timing and noise, not detection. The spread between splits is large, so treat individual numbers as indicative.
 
 ## Quick start (Windows PowerShell)
 ```powershell
@@ -59,7 +59,7 @@ python src\explain.py     # SHAP chart and sample explanations
 
 ## Limitations
 - The data is simulated, so faults are cleaner than real ones. Next step: test on real data such as Backblaze drive stats.
-- The test set contains only 6 failing servers, so per-fault numbers are indicative, not definitive.
+- Each split tests on only 6 failing servers, and the same 24 failing servers are reshuffled between splits, so the 30 catches are not independent. Treat numbers as indicative.
 - The alert gives a probability, not a countdown. A time-to-failure regressor is future work.
 - The suggested actions are rule-based, driven by which resource shows the strongest signal.
 

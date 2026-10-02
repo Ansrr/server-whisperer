@@ -171,10 +171,11 @@ else:
     chart_ph.info("Pick a fault in the sidebar and press **Break a server**.")
 
 st.divider()
-base = results["Threshold baseline"]["false_alarms_per_server_day"]
-ours = results["XGBoost"]["false_alarms_per_server_day"]
+runs = json.loads(Path("reports/robustness_runs.json").read_text())
+base = round(float(np.mean([r["Threshold baseline"]["false_alarms_per_server_day"] for r in runs])), 2)
+ours = round(float(np.mean([r["XGBoost"]["false_alarms_per_server_day"] for r in runs])), 2)
 c1, c2 = st.columns([1, 2])
 c1.metric("False alarms removed (alert fatigue meter)", f"{1 - ours / base:.0%}",
           f"{base} → {ours} per server-day", delta_color="off")
-c2.caption("Measured on held-out simulated servers that no model was trained on. "
+c2.caption("Average over 5 random splits of held-out simulated servers. "
            "The old rule alerts when CPU, memory or disk passes 90%.")
