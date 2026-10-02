@@ -1,0 +1,4 @@
+,caught,median_lead_min,false_alarms_per_server_day,lead_cpu_spike,lead_disk_fill,lead_memory_leak
+Threshold baseline,30/30,59.40 +/- 16.10,0.26 +/- 0.03,5.40 +/- 0.37,129.10 +/- 1.59,59.40 +/- 16.10
+Isolation Forest,30/30,221.00 +/- 21.57,0.12 +/- 0.08,37.80 +/- 1.44,508.10 +/- 82.44,221.00 +/- 21.57
+XGBoost,30/30,119.60 +/- 36.14,0.08 +/- 0.09,43.10 +/- 6.53,340.90 +/- 165.35,131.80 +/- 33.18

@@ -1,0 +1,132 @@
+[
+  {
+    "Threshold baseline": {
+      "caught": "6/6",
+      "median_lead_min": 45.0,
+      "false_alarms_per_server_day": 0.207,
+      "lead_cpu_spike": 6.0,
+      "lead_disk_fill": 127.5,
+      "lead_memory_leak": 45.0
+    },
+    "Isolation Forest": {
+      "caught": "6/6",
+      "median_lead_min": 230.5,
+      "false_alarms_per_server_day": 0.229,
+      "lead_cpu_spike": 40.5,
+      "lead_disk_fill": 554.5,
+      "lead_memory_leak": 230.5
+    },
+    "XGBoost": {
+      "caught": "6/6",
+      "median_lead_min": 105.0,
+      "false_alarms_per_server_day": 0.0,
+      "lead_cpu_spike": 42.0,
+      "lead_disk_fill": 294.0,
+      "lead_memory_leak": 105.0
+    }
+  },
+  {
+    "Threshold baseline": {
+      "caught": "6/6",
+      "median_lead_min": 56.0,
+      "false_alarms_per_server_day": 0.273,
+      "lead_cpu_spike": 5.5,
+      "lead_disk_fill": 130.5,
+      "lead_memory_leak": 56.0
+    },
+    "Isolation Forest": {
+      "caught": "6/6",
+      "median_lead_min": 241.5,
+      "false_alarms_per_server_day": 0.042,
+      "lead_cpu_spike": 37.0,
+      "lead_disk_fill": 387.0,
+      "lead_memory_leak": 241.5
+    },
+    "XGBoost": {
+      "caught": "6/6",
+      "median_lead_min": 106.5,
+      "false_alarms_per_server_day": 0.031,
+      "lead_cpu_spike": 39.0,
+      "lead_disk_fill": 217.5,
+      "lead_memory_leak": 138.5
+    }
+  },
+  {
+    "Threshold baseline": {
+      "caught": "6/6",
+      "median_lead_min": 49.5,
+      "false_alarms_per_server_day": 0.27,
+      "lead_cpu_spike": 5.0,
+      "lead_disk_fill": 127.0,
+      "lead_memory_leak": 49.5
+    },
+    "Isolation Forest": {
+      "caught": "6/6",
+      "median_lead_min": 203.5,
+      "false_alarms_per_server_day": 0.052,
+      "lead_cpu_spike": 37.0,
+      "lead_disk_fill": 432.0,
+      "lead_memory_leak": 203.5
+    },
+    "XGBoost": {
+      "caught": "6/6",
+      "median_lead_min": 97.0,
+      "false_alarms_per_server_day": 0.052,
+      "lead_cpu_spike": 52.5,
+      "lead_disk_fill": 137.0,
+      "lead_memory_leak": 126.0
+    }
+  },
+  {
+    "Threshold baseline": {
+      "caught": "6/6",
+      "median_lead_min": 56.0,
+      "false_alarms_per_server_day": 0.276,
+      "lead_cpu_spike": 5.5,
+      "lead_disk_fill": 131.0,
+      "lead_memory_leak": 56.0
+    },
+    "Isolation Forest": {
+      "caught": "6/6",
+      "median_lead_min": 241.5,
+      "false_alarms_per_server_day": 0.072,
+      "lead_cpu_spike": 38.0,
+      "lead_disk_fill": 583.5,
+      "lead_memory_leak": 241.5
+    },
+    "XGBoost": {
+      "caught": "6/6",
+      "median_lead_min": 191.5,
+      "false_alarms_per_server_day": 0.245,
+      "lead_cpu_spike": 48.0,
+      "lead_disk_fill": 590.0,
+      "lead_memory_leak": 191.5
+    }
+  },
+  {
+    "Threshold baseline": {
+      "caught": "6/6",
+      "median_lead_min": 90.5,
+      "false_alarms_per_server_day": 0.267,
+      "lead_cpu_spike": 5.0,
+      "lead_disk_fill": 129.5,
+      "lead_memory_leak": 90.5
+    },
+    "Isolation Forest": {
+      "caught": "6/6",
+      "median_lead_min": 188.0,
+      "false_alarms_per_server_day": 0.192,
+      "lead_cpu_spike": 36.5,
+      "lead_disk_fill": 583.5,
+      "lead_memory_leak": 188.0
+    },
+    "XGBoost": {
+      "caught": "6/6",
+      "median_lead_min": 98.0,
+      "false_alarms_per_server_day": 0.075,
+      "lead_cpu_spike": 34.0,
+      "lead_disk_fill": 466.0,
+      "lead_memory_leak": 98.0
+    }
+  }
+]
